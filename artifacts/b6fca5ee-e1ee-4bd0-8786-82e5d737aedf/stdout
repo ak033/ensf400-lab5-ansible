@@ -1,0 +1,26 @@
+[1;35m[WARNING]: Ansible is being run in a world writable directory[0m
+[1;35m(/workspaces/ensf400-lab5-ansible), ignoring it as an ansible.cfg source. For[0m
+[1;35mmore information see[0m
+[1;35mhttps://docs.ansible.com/ansible/devel/reference_appendices/config.html#cfg-in-[0m
+[1;35mworld-writable-dir[0m
+[1;35m[WARNING]: No inventory was parsed, only implicit localhost is available[0m
+[1;35m[WARNING]: provided hosts list is empty, only localhost is available. Note that[0m
+[1;35mthe implicit localhost does not match 'all'[0m
+
+PLAY [Play - Handle Files in all hosts] ****************************************
+[0;36mskipping: no hosts matched[0m
+[1;35m[WARNING]: Could not match supplied host pattern, ignoring: app_group[0m
+
+PLAY [Play - for Alpines Nodejs app] *******************************************
+[0;36mskipping: no hosts matched[0m
+
+PLAY [Play - Install and configure Nginx as a LoadBalancer] ********************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [localhost][0m
+
+TASK [Update cache] ************************************************************
+[0;31mfatal: [localhost]: FAILED! => {"changed": false, "module_stderr": "ModuleNotFoundError: No module named '_cffi_backend'\nthread '<unnamed>' panicked at /github/home/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pyo3-0.20.3/src/err/mod.rs:788:5:\nPython API call failed\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\nTraceback (most recent call last):\n  File \"/home/codespace/.ansible/tmp/ansible-tmp-1711331539.9021926-19733-113812890255973/AnsiballZ_apt.py\", line 107, in <module>\n    _ansiballz_main()\n  File \"/home/codespace/.ansible/tmp/ansible-tmp-1711331539.9021926-19733-113812890255973/AnsiballZ_apt.py\", line 99, in _ansiballz_main\n    invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)\n  File \"/home/codespace/.ansible/tmp/ansible-tmp-1711331539.9021926-19733-113812890255973/AnsiballZ_apt.py\", line 47, in invoke_module\n    runpy.run_module(mod_name='ansible.modules.apt', init_globals=dict(_module_fqn='ansible.modules.apt', _modlib_path=modlib_path),\n  File \"/usr/local/python/3.10.13/lib/python3.10/runpy.py\", line 224, in run_module\n    return _run_module_code(code, init_globals, run_name, mod_spec)\n  File \"/usr/local/python/3.10.13/lib/python3.10/runpy.py\", line 96, in _run_module_code\n    _run_code(code, mod_globals, init_globals,\n  File \"/usr/local/python/3.10.13/lib/python3.10/runpy.py\", line 86, in _run_code\n    exec(code, run_globals)\n  File \"/tmp/ansible_apt_payload_zvffnqmf/ansible_apt_payload.zip/ansible/modules/apt.py\", line 377, in <module>\n  File \"/tmp/ansible_apt_payload_zvffnqmf/ansible_apt_payload.zip/ansible/module_utils/urls.py\", line 190, in <module>\n  File \"/usr/local/python/3.10.13/lib/python3.10/site-packages/cryptography/x509/__init__.py\", line 7, in <module>\n    from cryptography.x509 import certificate_transparency, verification\n  File \"/usr/local/python/3.10.13/lib/python3.10/site-packages/cryptography/x509/certificate_transparency.py\", line 11, in <module>\n    from cryptography.hazmat.bindings._rust import x509 as rust_x509\npyo3_runtime.PanicException: Python API call failed\n", "module_stdout": "", "msg": "MODULE FAILURE\nSee stdout/stderr for the exact error", "rc": 1}[0m
+
+PLAY RECAP *********************************************************************
+[0;31mlocalhost[0m                  : [0;32mok=1   [0m changed=0    unreachable=0    [0;31mfailed=1   [0m skipped=0    rescued=0    ignored=0   
