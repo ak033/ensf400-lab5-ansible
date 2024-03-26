@@ -18,5 +18,5 @@ for host in inventory.get_hosts():
     print(f"Group names: {', '.join([group.name for group in host.groups])}")
 
 # Ping all hosts
-os.system('ansible all:localhost -m ping')
+os.system('ansible all:localhost -m ping') 
 
